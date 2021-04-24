@@ -1,40 +1,37 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
+import { Card, Form, Button } from 'react-bootstrap';
 
 import "./Login.css";
 
 const Login = () => {
     return (
-         <Card className="card-top">
-            <Card.Header>Login to your account</Card.Header>
-             <Card.Body>
-             <form>
-                <div className="form-group">
-                    <label>Email address</label>
-                    <input type="email" className="form-control" placeholder="Enter email" />
-                </div>
+        <Card className="card-top">
+            <Card.Header className="text-center">Login to your account</Card.Header>
+            <Card.Body>
+                <Form>
+                    <Form.Group controlId="formBasicEmail">
+                        <Form.Label>Email address</Form.Label>
+                        <Form.Control type="email" placeholder="Enter email" />
+                        <Form.Text className="text-muted">
+                            We'll never share your email with anyone else.
+                </Form.Text>
+                    </Form.Group>
 
-                <div className="form-group">
-                    <label>Password</label>
-                    <input type="password" className="form-control" placeholder="Enter password" />
-                </div>
+                    <Form.Group controlId="formBasicPassword">
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control type="password" placeholder="Password" />
+                    </Form.Group>
+                    <Form.Group controlId="formBasicCheckbox">
+                        <Form.Check type="checkbox" label="Check me out" />
+                    </Form.Group>
+                    <Button variant="primary" type="submit">
+                        Submit
+                   </Button>
+                </Form>
+            </Card.Body>
 
-                <div className="form-group">
-                    <div className="custom-control custom-checkbox">
-                        <input type="checkbox" className="custom-control-input" id="customCheck1" />
-                        <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
-                    </div>
-                </div>
+        </Card>
 
-                <button type="submit" className="btn btn-primary btn-block">Submit</button>
-                <p className="forgot-password text-right">
-                    Forgot <a href="#">password?</a>
-                </p>
-            </form>
-             </Card.Body>
-
-         </Card>
-       
     );
 };
 

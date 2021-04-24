@@ -20,11 +20,7 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
-
-            <Route path="/login">
-             <Login />
-            </Route>
-
+            
             <Route path="/category">
               <Category />
             </Route>
