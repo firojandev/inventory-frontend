@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import Table from 'react-bootstrap/Table'
+
 import axios from 'axios';
 
 const Category = () => {
@@ -12,16 +14,36 @@ const Category = () => {
                 const cats = res.data;
                 setCategory(cats);
             })
-    },[])
+    }, [])
 
     return (
         <div>
 
             <h3>Category list</h3>
 
-            <ul>
-                {category.map(cat => <li>{cat.title}</li>)}
-            </ul>
+            <Table striped bordered hover>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Category Name</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                {category.map(cat => 
+                    
+                    <tr>
+                    <td>{cat.id}</td>
+                    <td>{cat.title}</td>
+                    <td>Edit | Delete</td>
+                   </tr>
+                    
+                    )}
+          
+                </tbody>
+            </Table>
+
         </div>
     );
 };
