@@ -11,6 +11,8 @@ import Product from "./components/products/Product";
 
 import Login from "./components/auth/Login";
 import UseToken from './components/auth/UseToken';
+import AddCategory from './components/category/AddCategory';
+import EditCategory from './components/category/EditCategory';
 
 function App() {
 
@@ -33,6 +35,14 @@ function App() {
 
             <Route path="/category">
               <Category />
+            </Route>
+
+            <Route path="/edit-category">
+              <EditCategory />
+            </Route>
+
+            <Route path="/add-category">
+              <AddCategory />
             </Route>
 
             <Route path="/product">

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
+import { Link } from "react-router-dom";
 import Table from 'react-bootstrap/Table'
 import Button from 'react-bootstrap/Button'
 
@@ -29,7 +30,9 @@ const Category = () => {
                 </div> 
                <div className="float-right">
 
-               <Button variant="outline-primary">New </Button>
+               <Link to="/add-category">
+                   <Button variant="outline-primary">New</Button> 
+               </Link>
 
                 </div> 
            </div>
@@ -50,7 +53,13 @@ const Category = () => {
                     <tr>
                     <td>{cat.id}</td>
                     <td>{cat.title}</td>
-                    <td> <Button variant="outline-info">Edit</Button> <Button variant="outline-danger">Danger</Button> </td>
+                    <td>
+                    <Link to="/edit-category">
+                         <Button variant="outline-info">Edit</Button>
+                    </Link>    
+                    
+                     <Button className="ml-2" variant="outline-danger">Danger</Button>
+                      </td>
                    </tr>
                     
                     )}
